@@ -29,6 +29,8 @@ spec:
               secretKeyRef:
                 name: authentication-secrets
                 key: public_key
+          - name: couchbaseHost
+            value: couchbase.default.svc.cluster.local
           ports:
             - name: http
               containerPort: 8082
