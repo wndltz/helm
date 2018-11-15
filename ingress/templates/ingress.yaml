@@ -1,0 +1,33 @@
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "ingress.fullname" . -}}
+{{- $ingressPath := .Values.ingress.path -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "ingress.name" . }}
+    helm.sh/chart: {{ include "ingress.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- with .Values.ingress.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+  rules:
+    - host: wndltz-auth.minikube
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: authentication
+              servicePort: 8081
+    - host: wndltz-tree.minikube
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: tree-service
+              servicePort: 8082
+{{- end }}
