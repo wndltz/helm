@@ -1,0 +1,9 @@
+dependencies:
+- name: elastic-stack
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 1.1.0
+- name: prometheus
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 7.4.1
+digest: sha256:261b206923073667b5840e581364de14f50f5f5817291054eea1726426cc143b
+generated: 2018-11-16T14:36:28.67011885+01:00

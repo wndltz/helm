@@ -1,0 +1,8 @@
+dependencies:
+- name: "elastic-stack"
+  version: "1.1.0"
+#  repository: "file://../dependency_chart/nginx"
+  repository: "@stable"
+- name: "prometheus"
+  version: "7.4.1"
+  repository: "@stable"
