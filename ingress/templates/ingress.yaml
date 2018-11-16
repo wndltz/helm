@@ -28,4 +28,16 @@ spec:
           - backend:
               serviceName: tree-service
               servicePort: 8082
+    - host:  {{ .Values.ingress.prometheusHost}}
+      http:
+        paths:
+          - backend:
+              serviceName: monitoring-prometheus-server
+              servicePort: 9090
+    - host:  {{ .Values.ingress.kibanaHost}}
+      http:
+        paths:
+          - backend:
+              serviceName: monitoring-kibana
+              servicePort: 5601
 {{- end }}
