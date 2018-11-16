@@ -16,18 +16,16 @@ metadata:
 {{- end }}
 spec:
   rules:
-    - host: wndltz-auth.minikube
+    - host: {{ .Values.ingress.authHost}}
       http:
         paths:
-          - path: /
-            backend:
+          - backend:
               serviceName: authentication
               servicePort: 8081
-    - host: wndltz-tree.minikube
+    - host:  {{ .Values.ingress.treeHost}}
       http:
         paths:
-          - path: /
-            backend:
+          - backend:
               serviceName: tree-service
               servicePort: 8082
 {{- end }}
