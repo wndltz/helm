@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: wndltz/tree-service
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
