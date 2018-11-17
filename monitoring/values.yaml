@@ -2,7 +2,16 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# hmmm... strange ... this must be enabled toplevel but since it is
+# a elastic-stack dependency, the config values go there ...
+fluentd-elasticsearch:
+  enabled: true
+
 elastic-stack:
+  fluentd-elasticsearch:
+    elasticsearch:
+      host: monitoring-elasticsearch-client.default.svc.cluster.local
+      port: 9200
   kibana:
     env:
       ELASTICSEARCH_URL: http://monitoring-elasticsearch-client.default.svc.cluster.local:9200
