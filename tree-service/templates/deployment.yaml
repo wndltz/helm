@@ -16,6 +16,8 @@ spec:
   template:
     metadata:
       labels:
+        app: {{ include "tree-service.name" . }}
+        app.domain: rplan
         app.kubernetes.io/name: {{ include "tree-service.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:

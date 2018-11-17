@@ -16,6 +16,8 @@ spec:
   template:
     metadata:
       labels:
+        app: {{ include "authentication.name" . }}
+        app.domain: rplan
         app.kubernetes.io/name: {{ include "authentication.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:

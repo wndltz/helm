@@ -16,6 +16,8 @@ spec:
   template:
     metadata:
       labels:
+        app: {{ include "couchbase.name" . }}
+        app.domain: rplan
         app.kubernetes.io/name: {{ include "couchbase.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
