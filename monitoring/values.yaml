@@ -2,10 +2,12 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# hmmm... strange ... this must be enabled toplevel but since it is
+# hmmm... strange ... this must be enabled/disabled toplevel but since it is
 # a elastic-stack dependency, the config values go there ...
 fluentd-elasticsearch:
   enabled: true
+logstash:
+  enabled: false
 
 elastic-stack:
   fluentd-elasticsearch:
